@@ -22,7 +22,6 @@ RSpec.describe PostsController, type: :controller do
       get :show, id: my_post.id
       expect(response).to render_template :show
     end
-
     it 'assigns my_post to @post' do
       get :show, id: my_post.id
       expect(assigns(:post)).to eq(my_post)
@@ -34,12 +33,10 @@ RSpec.describe PostsController, type: :controller do
       get :new
       expect(response).to have_http_status(:success)
     end
-
     it 'renders the #new view' do
       get :new
       expect(response).to render_template :new
     end
-
     it 'instantiates @post' do
       get :new
       expect(assigns(:post)).not_to be_nil
