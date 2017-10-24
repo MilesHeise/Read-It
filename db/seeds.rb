@@ -17,17 +17,8 @@ posts = Post.all
   )
 end
 
-Post.find_or_create_by(title: 'Unique Post', body: "I'm the only one!")
-
-postid = ''
-posts.each do |x|
-  if x.value?('Unique Post')
-    postid = x.fetch('id')
-    break
-  end
-end
-
-Comment.find_or_create_by(body: 'unique comment', post: postid)
+post = Post.find_or_create_by(title: 'Unique Post', body: "I'm the only one!")
+Comment.find_or_create_by(body: 'unique comment', post: post)
 
 puts 'Seed finished'
 puts "#{Post.count} posts created"
