@@ -7,6 +7,8 @@ Rails.application.routes.draw do
 
   resources :advertisements
 
+  resources :users, only: %i[new create]
+
   get 'about' => 'welcome#about'
 
   get 'welcome/contact'
