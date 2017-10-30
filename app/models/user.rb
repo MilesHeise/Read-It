@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   private
 
   def capitalize_name
-    name = name.split.map(&:capitalize).join(' ')
+    self.name = name.split.map(&:capitalize).join(' ')
   end
 
   def name_present?
@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
   end
 
   def downcase_email
-    email = email.downcase
+    self.email = email.downcase
   end
 
   def email_present?
