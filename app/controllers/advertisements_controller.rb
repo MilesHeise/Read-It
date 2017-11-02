@@ -12,10 +12,7 @@ class AdvertisementsController < ApplicationController
   end
 
   def create
-    @advertisement = Advertisement.new
-    @advertisement.title = params[:advertisement][:title]
-    @advertisement.body = params[:advertisement][:body]
-    @advertisement.price = params[:advertisement][:price]
+    @advertisement = Advertisement.new(advertisement_params)
 
     if @advertisement.save
       flash[:notice] = 'Advertisement was saved.'
@@ -24,5 +21,11 @@ class AdvertisementsController < ApplicationController
       flash.now[:alert] = 'There was an error saving the advertisement. Please try again.'
       render :new
     end
+  end
+
+  private
+
+  def advertisement_params
+    params.require(:advertisement).permit(:title, :body, :price)
   end
 end

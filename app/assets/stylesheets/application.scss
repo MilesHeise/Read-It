@@ -1,10 +1,11 @@
 @import "bootstrap-sprockets";
- @import "bootstrap";
+@import "bootstrap";
+@import "./*";
 
- .user-info {
-    margin-top: 9px;
-  }
+.user-info {
+  margin-top: 9px;
+}
 
-  .nav {
-    margin-top: 5px;
-  }
+.nav {
+  margin-top: 5px;
+}
