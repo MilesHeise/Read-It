@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :posts
+  has_many :comments
 
   before_save :downcase_email, if: :email_present?
   before_save :capitalize_name, if: :name_present?
