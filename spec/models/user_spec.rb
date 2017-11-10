@@ -76,8 +76,8 @@ RSpec.describe User, type: :model do
 
   describe '#favorite_for(post)' do
     before do
-      topic = Topic.create!(name: RandomData.random_sentence, description: RandomData.random_paragraph)
-      @post = topic.posts.create!(title: RandomData.random_sentence, body: RandomData.random_paragraph, user: user)
+      let(:topic) { create(:topic) }
+      @post = { create(:post) }
     end
 
     it 'returns `nil` if the user has not favorited the post' do

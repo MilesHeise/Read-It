@@ -1,0 +1,21 @@
+<div class="media">
+  <div class="media-body">
+    <% user.favorites.each do |post| %>
+    <h4 class="media-heading">
+      <%= link_to post.title, topic_post_path(post.topic, post) %>
+    </h4>
+    <small class="pull-left">
+      submitted
+      <%= time_ago_in_words(post.created_at) %>
+      ago by
+      <%= post.user.name %>
+      <%= image_tag post.user.avatar_url(48), class: "gravatar" %>
+      <br>
+      <%= post.comments.count %>
+      Comments and
+      <%= post.votes.count %>
+      Votes
+    </small>
+    <% end %>
+  </div>
+</div>
