@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_posts, through: :favorites, source: :post
 
   before_save :downcase_email, if: :email_present?
   before_save :capitalize_name, if: :name_present?

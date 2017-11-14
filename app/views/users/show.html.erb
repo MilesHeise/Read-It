@@ -19,7 +19,7 @@
     </div>
   </div>
 
-<% if user_has_posts? %>
+<% if user_has_posts?(current_user) %>
 
   <h2>Posts</h2>
   <%= render @user.posts %>
@@ -29,9 +29,9 @@
 
   <% else %>
 
-  <h2>"{user.name} has not submitted any posts yet."</h2>
+  <h2><%= @user.name %> has not submitted any posts yet.</h2>
 
 <% end %>
 
   <h2>Favorites</h2>
-  <% render partial: 'favorited', locals { user: @user }
+  <%= render partial: 'favorited', locals: { user: @user } %>
