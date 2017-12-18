@@ -1,3 +1,4 @@
-## Bloccit: a Reddit replica to teach the fundamentals of web development and Rails.
+# Read-It
 
- Made with my mentor at [Bloc](http://bloc.io).
+A Reddit clone on the Rails framework. Taught myself RSpec testing, Object Relational Mapping
+and SQL, and writing authorizations on Rails. Got expeirence using gems including Figaro and Sendgrid.
