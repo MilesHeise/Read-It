@@ -4,7 +4,7 @@
   <h1>Welcome
   <%= link_to current_user.name, user_path(current_user) %>
   </h1>
-  <p> <%= link_to "What's on your mind?", new_topic_path, class: 'btn btn-success' %>
+  <p> <%= link_to "Pick a topic", topics_path, class: 'btn btn-success' %>
   <% else %>
   <h1>Read-It</h1>
   <p>Read-It is a resource for sharing links with your friends!</p>
@@ -22,10 +22,10 @@
   </div>
   <div class="col-md-4">
     <h2>Eliminates poverty</h2>
-    <p>Read-It will deliver money and education to those in need, all over the world.</p>
+    <p>Read-It will deliver money and education to the children.</p>
   </div>
   <div class="col-md-4">
     <h2>Makes you better looking</h2>
-    <p>Read-It will make you better looking: it's scientifically proven to make men look like Ryan Gosling and women look like Shakira.</p>
+    <p>Read-It will make you better looking: it's scientifically proven to make men look like Ryan Gosling and women ... also Ryan Gosling</p>
   </div>
 </div>
