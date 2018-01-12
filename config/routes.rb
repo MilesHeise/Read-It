@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
   resources :questions
 
   resources :topics do
@@ -20,10 +22,4 @@ Rails.application.routes.draw do
   resources :sessions, only: %i[new create destroy]
 
   get 'about' => 'welcome#about'
-
-  get 'welcome/contact'
-
-  get 'welcome/faq'
-
-  root 'welcome#index'
 end
